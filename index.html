@@ -18,17 +18,19 @@
 <body class="bg-grey-100 font-grey-800 font-lato">
     <section class="text-center margin-tb40">
         <label for="userInput" class="display-block margin-b10 fs-2em">Convert recipe to:</label>
-        <div class="display-flex direction-row justify-center" >
+        <div class="display-flex direction-row justify-center">
             <input type="text" id="conversion" class="border-none brad-5 font-lato" placeholder="ie: 3x, half, or 1.5x">
         </div>
     </section>
     <section class="display-flex justify-evenly">
         <div id="original-recipe-div" class="display-flex direction-column align-center">
-            <textarea id="original" class="h60vmin-w75vmin border-none brad-5 font-lato" placeholder="Paste the original recipe here..."></textarea>
+            <textarea id="original" class="h60vmin-w75vmin border-none brad-5 font-lato"
+                placeholder="Paste the original recipe text here..."></textarea>
             <input id="convert" type="submit" value="Convert" class="border-none w-20vmin brad-5 margin-t10 font-white bg-grey-400 font-lato">
         </div>
         <div id="formatted-recipe-div" class="display-flex direction-column align-center">
-            <textarea id="formatted" class="h60vmin-w75vmin border-none brad-5 font-lato" placeholder="The converted recipe will show up here..."></textarea>
+            <textarea id="formatted" class="h60vmin-w75vmin border-none brad-5 font-lato"
+                placeholder="The converted recipe text will show up here..."></textarea>
             <input id="save" type="submit" value="Save" class="border-none w-20vmin brad-5 margin-t10 font-white bg-grey-400 font-lato
             ">
         </div>

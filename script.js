@@ -49,26 +49,57 @@ document.querySelector('#original-recipe-div input[type="submit"]').addEventList
     if (!isNaN(conversionFactor) && originalRecipe) {
         // Split the recipe into lines (assuming each line is a step)
         const recipeLines = originalRecipe.split('\n');
-        
-        // Create an array to store the converted recipe
         const convertedRecipe = [];
-
-        // Iterate through the recipe lines and convert the ingredients to decimals
         for (const line of recipeLines) {
             const convertedLine = convertIngredientToDecimal(line, conversionFactor);
             convertedRecipe.push(convertedLine);
         }
-
-        // Update the formatted recipe input
         formattedRecipeInput.value = convertedRecipe.join('\n');
     }
     else {
-        // Handle invalid input
         formattedRecipeInput.value = "Please enter a valid conversion factor and recipe.";
     }
 });
 
-// Add an event listener to the "Save" button
 document.querySelector('#formatted-recipe-div input[type="submit"]').addEventListener('click', function() {
     // Handle saving the formatted recipe here
 });
+
+// const request = require('request-promise');
+// const cheerio = require('cheerio');
+
+// const url = 'https://www.thechunkychef.com/chicken-and-rice-soup/';
+// request(url)
+//   .then((html) => {
+//     const $ = cheerio.load(html);
+
+//     let recipeData = {
+//       title: $('h1.entry-title').text().trim(),
+//       prepTime: $('span.wprm-recipe-prep-time').text().trim(),
+//       cookTime: $('span.wprm-recipe-cook-time').text().trim(),
+//       totalTime: $('span.wprm-recipe-total-time').text().trim(),
+//       servings: $('span.wprm-recipe-servings').text().trim(),
+//       calories: $('span.wprm-recipe-calories').text().trim(),
+//     };
+
+//     let ingredients = [];
+//     $('ul.wprm-recipe-ingredients li').each((index, element) => {
+//       ingredients.push($(element).text().trim());
+//     });
+
+//     let instructions = [];
+//     $('div.wprm-recipe-instruction-text').each((index, element) => {
+//       instructions.push(`${index + 1}. ${$(element).text().trim()}`);
+//     });
+
+//     recipeData.ingredients = ingredients;
+//     recipeData.instructions = instructions;
+
+//     // Log the recipe data
+//     console.log(recipeData);
+//   })
+//   .catch((error) => {
+//     console.error(error);
+//   });
+
+
