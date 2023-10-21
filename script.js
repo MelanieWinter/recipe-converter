@@ -2,6 +2,16 @@ const conversionInput = document.getElementById('conversion');
 const originalRecipeInput = document.getElementById('original');
 const formattedRecipeInput = document.getElementById('formatted');
 
+function convertRecipe() {
+    const conversionFactor = parseFloat(conversionInput.value);
+    const originalRecipeHTML = originalRecipeInput.innerHTML;
+    const convertedRecipeHTML = convertIngredientToDecimal(originalRecipeHTML, conversionFactor);
+
+    formattedRecipeInput.innerHTML = convertedRecipeHTML;
+}
+
+document.getElementById('convert').addEventListener('click', convertRecipe);
+
 function convertIngredientToDecimal(ingredient, conversionFactor) {
     const measurementTerms = ["cup", "c", "teaspoon", "t", "tsp", "tablespoon", "T", "tbsp", "quart", "qt", "pint", "pt", "ounce", 'oz', "gallon", "gal", "lb", "lb.", "pound","milligram", "mg", "gram", "kilogram", "kg", "milliliter", "ml", "liter", "l"];
 
@@ -45,19 +55,3 @@ function convertIngredientToDecimal(ingredient, conversionFactor) {
         return openTag + convertedContent + closeTag;
     });
 }
-
-
-
-
-
-
-
-document.getElementById('convert').addEventListener('click', function() {
-    const conversionFactor = parseFloat(conversionInput.value);
-    const originalRecipeHTML = originalRecipeInput.innerHTML;
-
-    // Replace only the numbers within the text content with the converted numbers
-    const convertedRecipeHTML = convertIngredientToDecimal(originalRecipeHTML, conversionFactor);
-
-    formattedRecipeInput.innerHTML = convertedRecipeHTML;
-});
