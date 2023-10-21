@@ -16,25 +16,38 @@
 </header>
 
 <body class="bg-grey-100 font-grey-800 font-lato">
-    <section class="text-center margin-tb40">
+    <section class="text-center margin-tb30">
         <label for="userInput" class="display-block margin-b10 fs-2em">Convert recipe to:</label>
         <div class="display-flex direction-row justify-center">
             <input type="text" id="conversion" class="border-none brad-5 font-lato" placeholder="ie: 3x, half, or 1.5x">
         </div>
+        <!-- <div>
+            <input type="text" id="url" class="border-none brad-5 font-lato margin-t10" placeholder="Paste a URL here">
+            <button id="fetch-url">Go!</button>
+        </div> -->
     </section>
     <section class="display-flex justify-evenly">
         <div id="original-recipe-div" class="display-flex direction-column align-center">
-            <textarea id="original" class="h60vmin-w75vmin border-none brad-5 font-lato"
-                placeholder="Paste the original recipe text here..."></textarea>
+            <div id="original" class="h60vmin-w75vmin border-none brad-5 font-lato" contenteditable="true" style="overflow: auto;">
+                <!-- You can directly enter or paste the original recipe text here with formatting -->
+            </div>
             <input id="convert" type="submit" value="Convert" class="border-none w-20vmin brad-5 margin-t10 font-white bg-grey-400 font-lato">
         </div>
-        <div id="formatted-recipe-div" class="display-flex direction-column align-center">
+        <!-- <div id="formatted-recipe-div" class="display-flex direction-column align-center">
             <textarea id="formatted" class="h60vmin-w75vmin border-none brad-5 font-lato"
                 placeholder="The converted recipe text will show up here..."></textarea>
             <input id="save" type="submit" value="Save" class="border-none w-20vmin brad-5 margin-t10 font-white bg-grey-400 font-lato
             ">
+        </div> -->
+        <div id="formatted-recipe-div" class="display-flex direction-column align-center">
+            <div id="formatted" class="h60vmin-w75vmin border-none brad-5 font-lato" contenteditable="true" style="overflow: auto;">
+                <!-- The converted recipe text will show up here, and it can be edited if needed -->
+            </div>
+            <input id="save" type="submit" value="Save" class="border-none w-20vmin brad-5 margin-t10 font-white bg-grey-400 font-lato">
         </div>
     </section>
 </body>
 
 </html>
+
+
