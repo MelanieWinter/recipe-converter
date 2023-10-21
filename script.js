@@ -55,3 +55,17 @@ function convertIngredientToDecimal(ingredient, conversionFactor) {
         return openTag + convertedContent + closeTag;
     });
 }
+
+document.getElementById('save').addEventListener('click', function() {
+    const formattedRecipeHTML = formattedRecipeInput.innerHTML;
+
+    // Create a new jsPDF instance
+    const pdf = new jsPDF();
+
+    // Add the content (formatted recipe) to the PDF
+    pdf.fromHTML(formattedRecipeHTML, 15, 15);
+
+    // Save the PDF to a file
+    pdf.save('converted_recipe.pdf');
+});
+
